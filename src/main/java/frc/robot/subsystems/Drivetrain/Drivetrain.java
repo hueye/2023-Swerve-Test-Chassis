@@ -20,22 +20,26 @@ public class Drivetrain extends SubsystemBase {
     final SwerveModule fL = new SwerveModule(
         Constants.kFrontLeftDrivingCanId,
         Constants.kFrontLeftTurningCanId,
-        Constants.kFrontLeftChassisAngularOffset);
+        Constants.kFrontLeftChassisAngularOffset,
+        Constants.fLCANCoderID);
 
     final SwerveModule fR = new SwerveModule(
         Constants.kFrontRightDrivingCanId,
         Constants.kFrontRightTurningCanId,
-        Constants.kFrontRightChassisAngularOffset);
+        Constants.kFrontRightChassisAngularOffset,
+        Constants.fRCANCoderID);
 
     final SwerveModule bL = new SwerveModule(
         Constants.kRearLeftDrivingCanId,
         Constants.kRearLeftTurningCanId,
-        Constants.kBackLeftChassisAngularOffset);
+        Constants.kBackLeftChassisAngularOffset,
+        Constants.bLCANCoderID);
 
     final SwerveModule bR = new SwerveModule(
         Constants.kRearRightDrivingCanId,
         Constants.kRearRightTurningCanId,
-        Constants.kBackRightChassisAngularOffset);
+        Constants.kBackRightChassisAngularOffset,
+        Constants.bRCANCoderID);
 
 //Gyro for the drivetrain
     final WPI_Pigeon2 gyro = new WPI_Pigeon2(Constants.pigeonid);
@@ -47,7 +51,7 @@ public class Drivetrain extends SubsystemBase {
             fL.getPosition(),
             fR.getPosition(),
             bL.getPosition(),
-            bR.getPosition(),
+            bR.getPosition()
         });
        
 //Finding position of the robot
